@@ -96,6 +96,9 @@ public class MainActivity extends Activity implements OnSeekBarChangeListener{
 	}
 }
 ```
+---
+效果如下：
+![效果图](https://github.com/Mage-M/StudyAndroid/raw/master/控件篇/图片/SeekBar.png)
 
 
 
