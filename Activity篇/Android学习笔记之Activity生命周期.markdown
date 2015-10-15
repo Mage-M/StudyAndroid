@@ -6,6 +6,8 @@
 
 ##下面这张图讲解了activity的生命周期：(这个金字塔模型要比之前Dev Guide里面的生命周期图更加容易理解，更加形象)
 
+![效果图](https://github.com/Mage-M/StudyAndroid/raw/master/Activity篇/图片/Activity生命周期.png)
+
 根据activity的复杂度，也许不需要实现所有的生命周期方法。但了解每一个方法的回调时机并在其中填充相应功能，使得确保app能够像用户期望的那样执行是很有必要的。如何实现一个符合用户期待的app，我们需要注意下面几点：
 
 1.使用app的时候，不会因为有来电通话或者切换到其他app而导致程序crash。
@@ -20,7 +22,7 @@
 ---
 ###3.Stopped 状态：当Activity是不可见的时，Activity处于Stopped状态。Activity将继续保留在内存中保持当前的所有状态和成员信息，假设系统别的地方需要内存的话，这时它是被回收对象的主要候选。当Activity处于Stopped状态时，一定要保存当前数据和当前的UI状态，否则一旦Activity退出或关闭时，当前的数据和UI状态就丢失了。
 ---
-*###4.另外，还有一点要注意，Activity在处于onPause、onStop、onDestroy状态下，系统都可以销毁该Activity所在进程，所以我们在处理一些要保存的数据时，必须在onPause方法中进行，因为onStop和onDestroy方法不一定会被调用。*
+###4.另外，还有一点要注意，Activity在处于onPause、onStop、onDestroy状态下，系统都可以销毁该Activity所在进程，所以我们在处理一些要保存的数据时，必须在onPause方法中进行，因为onStop和onDestroy方法不一定会被调用。
 ---
 ###注:
 ####1.只要该Activity处于看不见的状态想要再次显示，则都需要调用3个方法：
