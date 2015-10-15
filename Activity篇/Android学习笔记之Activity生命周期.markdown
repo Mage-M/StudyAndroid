@@ -22,10 +22,10 @@
 
 下面的课程会介绍上图所示的几个生命状态。然而，其中只有三个状态是静态的，这三个状态下activity可以存在一段比较长的时间。(其它几个状态会很快就切换掉，停留的时间比较短暂)
 
-Resumed：该状态下，activity处在前台，用户可以与它进行交互。(通常也被理解为"running" 状态)
-Paused：该状态下，activity的部分被另外一个activity所遮盖：另外的activity来到前台，但是半透明的，不会覆盖整个屏幕。被暂停的activity不再接受用户的输入且不再执行任何代码。
-Stopped：该状态下, activity完全被隐藏，对用户不可见。可以认为是在后台。当stopped, activity实例与它的所有状态信息（如成员变量等）都会被保留，但activity不能执行任何代码。
-其它状态 (Created与Started)都是短暂的，系统快速的执行那些回调函数并通过执行下一阶段的回调函数移动到下一个状态。也就是说，在系统调用onCreate(), 之后会迅速调用onStart(), 之后再迅速执行onResume()。以上就是基本的activity生命周期。
+####Resumed：该状态下，activity处在前台，用户可以与它进行交互。(通常也被理解为"running" 状态)
+####Paused：该状态下，activity的部分被另外一个activity所遮盖：另外的activity来到前台，但是半透明的，不会覆盖整个屏幕。被暂停的activity不再接受用户的输入且不再执行任何代码。
+####Stopped：该状态下, activity完全被隐藏，对用户不可见。可以认为是在后台。当stopped, activity实例与它的所有状态信息（如成员变量等）都会被保留，但activity不能执行任何代码。
+####其它状态 (Created与Started)都是短暂的，系统快速的执行那些回调函数并通过执行下一阶段的回调函数移动到下一个状态。也就是说，在系统调用onCreate(), 之后会迅速调用onStart(), 之后再迅速执行onResume()。以上就是基本的activity生命周期。
 ---
 ##几种状态详解：
 ###1.Active状态：这时候Activity处于栈顶，且是可见的，有焦点的，能够接收用户输入前景Activity。OPhone Runtime将试图不惜一切代价保持它活着，甚至杀死其他Activity以确保它有它所需的资源。当另一个Activity变成Active时，当前的将变成Paused状态。
