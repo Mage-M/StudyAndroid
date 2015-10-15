@@ -6,6 +6,10 @@
 
 ##下面这张图讲解了activity的生命周期：(这个金字塔模型要比之前Dev Guide里面的生命周期图更加容易理解，更加形象)
 
+在一个activity的生命周期中，系统会像金字塔模型一样去调用一系列的生命周期回调函数。Activity生命周期的每一个阶段就像金字塔中的台阶。当系统创建了一个新的activity实例，每一个回调函数会向上一阶移动activity状态。处在金字塔顶端意味着当前activity处在前台并处于用户可与其进行交互的状态。
+
+当用户退出这个activity时，为了回收该activity，系统会调用其它方法来向下一阶移动activity状态。在某些情况下，activity会隐藏在金字塔下等待(例如当用户切换到其他app),此时activity可以重新回到顶端(如果用户回到这个activity)并恢复用户离开时的状态。
+
 ![效果图](https://github.com/Mage-M/StudyAndroid/raw/master/Activity篇/图片/Activity_lifecycle.png)
 
 根据activity的复杂度，也许不需要实现所有的生命周期方法。但了解每一个方法的回调时机并在其中填充相应功能，使得确保app能够像用户期望的那样执行是很有必要的。如何实现一个符合用户期待的app，我们需要注意下面几点：
