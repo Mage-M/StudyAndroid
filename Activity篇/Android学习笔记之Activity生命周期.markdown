@@ -6,7 +6,7 @@
 
 ##下面这张图讲解了activity的生命周期：(这个金字塔模型要比之前Dev Guide里面的生命周期图更加容易理解，更加形象)
 
-![效果图](https://github.com/Mage-M/StudyAndroid/raw/master/Activity篇/图片/Activity生命周期.png)
+![效果图](https://github.com/Mage-M/StudyAndroid/raw/master/Activity篇/图片/Activity_lifecycle.png)
 
 根据activity的复杂度，也许不需要实现所有的生命周期方法。但了解每一个方法的回调时机并在其中填充相应功能，使得确保app能够像用户期望的那样执行是很有必要的。如何实现一个符合用户期待的app，我们需要注意下面几点：
 
