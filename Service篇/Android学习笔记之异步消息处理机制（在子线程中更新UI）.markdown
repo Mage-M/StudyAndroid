@@ -14,7 +14,7 @@
 ---
 其中最常用的可能就是第一和第四两种方法，下面我分别将这四种方法分析一下：
 
-##1.发送Message，并重写Handle中的handleMessage（）方法
+##1.发送Message，并重写Handler中的handleMessage（）方法
 （1）创建Handler对象只能在主线程中，在子线程中创建会导致崩溃，提示为 Can't create handler inside thread that has not called Looper.prepare()。说明Handler的创建是依赖Looper.prepare()这个方法的。
 （2）如果我们在子线程中调用Looper.prepare()这个方法后，发现再次创建就不会再崩溃。为什么会这样？
 在查阅资料后发现Handler（）的构造方法中需要获取一个Looper对象，如果为空，就会抛出一个异常，正是前面的那个异常。
