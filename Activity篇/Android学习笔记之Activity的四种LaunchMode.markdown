@@ -22,15 +22,22 @@ standard模式每次都会创建新的实例，可以在界面中打印出对象
 
 现在点Android设备的回退键，可以看到是按照刚才创建Activity实例的倒序依次出现，类似退栈的操作，而刚才操作跳转按钮的过程是压栈的操作。如下图：
 
+![效果图](https://github.com/Mage-M/StudyAndroid/raw/master/Activity篇/图片/standard.png)
+
+
 ##singleTop
 singleTop和standard模式，都会将intent发送新的实例（后两种模式不发送到新的实例，如果已经有了的话）。不过，singleTop要求如果创建intent的时候栈顶已经有要创建的Activity的实例，则将intent发送给该实例，而不发送给新的实例。
 
 运行的时候会发现，按多少遍按钮，都是相同的ActiA实例，因为该实例在栈顶，因此不会创建新的实例。如果回退，将退出应用。（从activityA跳到activityA）
 
+![效果图](https://github.com/Mage-M/StudyAndroid/raw/master/Activity篇/图片/singleTop1.png)
+
 singleTop模式，可用来解决栈顶多个重复相同的Activity的问题。
 
 如果是A Activity跳转到B Activity，再跳转到A Activity，行为就和standard一样了，会在B Activity跳转到A Activity的时候创建A Activity的新实例，因为当时的栈顶不是A Activity实例。
 ActB类使用默认（standard）加载，ActA使用singleTop加载。结果类似下图：
+
+![效果图](https://github.com/Mage-M/StudyAndroid/raw/master/Activity篇/图片/singleTop2.png)
 
 
 ##singleTask
@@ -40,8 +47,12 @@ singleTask模式和后面的singleInstance模式都是只创建一个实例的�
 
 把ActA的launchMode改为singleTask，ActB的改为standard。那么会发现在ActA界面中按一次按钮跳到ActB：
 
+![效果图](https://github.com/Mage-M/StudyAndroid/raw/master/Activity篇/图片/singleTask1.png)
+
 
 然后在ActB1界面中按按钮跳到ActA，因为ActA是singleTask，会使用原来的ActA1实例。这时候栈内的情况:
+
+![效果图](https://github.com/Mage-M/StudyAndroid/raw/master/Activity篇/图片/singleTask2.png)
 
 如果多次按按钮跳转，会发现始终只有ActA1这一个ActA类的实例。
 
@@ -81,6 +92,10 @@ singleInstance模式解决了这个问题（绕了这么半天才说到正题）
 
 如果还是拿刚才的ActA和ActB的示例，可以把ActB的模式改为singleInstance，ActA为standard，如果按一次按钮切换到ActB，看到现象用示意图类似这样：
 
+![效果图](https://github.com/Mage-M/StudyAndroid/raw/master/Activity篇/图片/singleInstance1.png)
+
 如果是第一次按钮切换到ActB，在ActB在按按钮切换到ActA，然后再回退，示意图是：
+
+![效果图](https://github.com/Mage-M/StudyAndroid/raw/master/Activity篇/图片/singleInstance.png)
 
 另外，可以看到两个Activity的taskId是不同的。
