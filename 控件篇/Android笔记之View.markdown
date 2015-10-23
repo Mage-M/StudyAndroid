@@ -195,6 +195,8 @@ public class CounterView extends View implements OnClickListener {
 可以看到，这里我们将CounterView放入了一个RelativeLayout中，然后可以像使用普通控件来给CounterView指定各种属性，比如通过layout_width和layout_height来指定CounterView的宽高，通过android:layout_centerInParent来指定它在布局里居中显示。只不过需要注意，自定义的View在使用的时候一定要写出完整的包名，不然系统将无法找到这个View。
 好了，就是这么简单，接下来我们可以运行一下程序，并不停地点击CounterView，效果如下图所示:
 
+![效果图](https://github.com/Mage-M/StudyAndroid/raw/master/控件篇/图片/counterview.gif)
+
 
 ###2.组合控件：
 组合控件的意思就是，我们并不需要自己去绘制视图上显示的内容，而只是用系统原生的控件就好了，但我们可以将几个系统原生的控件组合到一起，这样创建出的控件就被称为组合控件。
@@ -288,7 +290,7 @@ TitleView中的代码非常简单，在TitleView的构建方法中，我们调�
 ```
 效果如下所示：
 
-
+![效果图](https://github.com/Mage-M/StudyAndroid/raw/master/控件篇/图片/titleview.png)
 
 现在点击一下Back按钮，就可以关闭当前的Activity了。如果你想要修改标题栏上显示的内容，或者返回按钮的默认事件，只需要在Activity中通过findViewById()方法得到TitleView的实例，然后调用setTitleText()、setLeftButtonText()、setLeftButtonListener()等方法进行设置就OK了。
 
