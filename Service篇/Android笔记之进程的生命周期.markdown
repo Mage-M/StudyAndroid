@@ -40,7 +40,7 @@ Android是根据进程中组件的重要性尽可能高的来评级的。比如�
 
 另外，一个进程的评级可能会因为其他依附在它上面的进程而被提升—一个服务其他进程的进程永远不会比它正在服务的进程评级低的。比如，如果进程A中的一个 content provider 正在为进程B中的客户端服务，或者如果进程A中的一个 service 绑定到进程B中的一个组件，进程A的评级会被系统认为至少比进程B要高。
 
-因为进程里面运行着一个 service 的评级要比一个包含background activities的进程要高，所以当一个 activity 启动长时操作时，最好启动一个 service 来做这个操作，而不是简单的创建一个worker线程—特别是当这个长时操作可能会拖垮这个activity。比如，一个需要上传图片到一个网站的activity 应当开启一个来执行这个上传操作。这样的话，即使用户离开来这个activity也能保证上传动作在后台继续。使用 service 可以保证操作至少处于”service process” 这个优先级，无论这个activity发生了什么。这也是为什么 broadcast receivers 应该使用 services 而不是简单的将耗时的操作放到线程里面。
+因为进程里面运行着一个 service 的评级要比一个包含background activities的进程要高，所以当一个 activity 启动长时操作时，最好启动一个 service 来做这个操作，而不是简单的创建一个worker线程—特别是当这个长时操作可能会拖垮这个activity。比如，一个需要上传图片到一个网站的activity 应当开启一个来执行这个上传操作。这样的话，即使用户离开来这个activity也能保证上传动作在后台继续。使用 service 可以保证操作至少处于”service process” 这个优先级，无论这个activity发生了什么。这也是为什么 broadcast receivers 应该使用 services 而不是简单的将耗时的操作放到线程里面
 
 
 
