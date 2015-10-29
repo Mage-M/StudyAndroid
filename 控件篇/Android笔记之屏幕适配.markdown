@@ -102,6 +102,8 @@ res/layout-sw600dp/main.xml
 如果你想使用普通的图片来实现上述功能，你很快就会发现结果是令人失望的，因为运行时会均匀地拉伸或压缩你的图片。解决方案是使用nine-patch图片，它是一种被特殊处理过的PNG图片，你可以指定哪些区域可以拉伸而哪些区域不可以。
 
 因而，当你设计需要在不同大小的控件中使用的图片时，最好的方法就是用nine-patch图片。为了将图片转换成nine-patch图片，你可以从一张普通的图片开始：
+
+
 ![效果图](https://github.com/Mage-M/StudyAndroid/raw/master/控件篇/图片/9p1.png)
 
 
