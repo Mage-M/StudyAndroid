@@ -20,6 +20,11 @@ match_parent：该View的宽和高会被拉长至充满整个父布局。
 为了更加准确地控制TextView里面内容的位置，我们可以使用一系列的padding属性来控制。在使用padding属性之前，先科普一下padding和Marigin之间的区别，然后我们在通过实际的效果看看他们之间的差异。
 下图所示是一个类似盒子的模型，我们将通过下面的模型来讲解Padding和Marigin之间的区别。从图中可以看出，在Container（父控件）里面有一个子控件，假设是一个TextView控件。
 
+
+![效果图](https://github.com/Mage-M/StudyAndroid/raw/master/控件篇/图片/boxmodel.png)
+
+
+
  - 其中Margin是子控件与父控件之间的间隔大小。
  - Border是子控件的边框，它是子控件和父控件的边界。
  - Padding是指子控件中的内容(Content Area)与子控件Border的间隔大小。
@@ -97,12 +102,12 @@ res/layout-sw600dp/main.xml
 如果你想使用普通的图片来实现上述功能，你很快就会发现结果是令人失望的，因为运行时会均匀地拉伸或压缩你的图片。解决方案是使用nine-patch图片，它是一种被特殊处理过的PNG图片，你可以指定哪些区域可以拉伸而哪些区域不可以。
 
 因而，当你设计需要在不同大小的控件中使用的图片时，最好的方法就是用nine-patch图片。为了将图片转换成nine-patch图片，你可以从一张普通的图片开始：
-
+![效果图](https://github.com/Mage-M/StudyAndroid/raw/master/控件篇/图片/9p1.png)
 
 
 然后通过SDK中带有的draw9patch工具打开这张图片(工具位置在SDK的tools目录下)，你可以在图片的左边框和上边框绘制来标记哪些区域可以被拉伸。你也可以在图片的右边框和下边框绘制来标记内容需要放置在哪个区域。结果如下图所示：
 
-
+![效果图](https://github.com/Mage-M/StudyAndroid/raw/master/控件篇/图片/9p2.png)
 
 注意图片边框上的黑色像素，在上边框和左边框的部分表示当图片需要拉伸时就拉伸黑点标记的位置。在下边框和右边框的部分表示内容将会被放置的区域。
 
@@ -110,6 +115,7 @@ res/layout-sw600dp/main.xml
 
 当你需要在一个控件中使用nine-patch图片时(如android:background="@drawable/button")，系统就会根据控件的大小自动地拉伸你想要拉伸的部分，效果如下图所示：
 
+![效果图](https://github.com/Mage-M/StudyAndroid/raw/master/控件篇/图片/9p3.png)
 
 
 
