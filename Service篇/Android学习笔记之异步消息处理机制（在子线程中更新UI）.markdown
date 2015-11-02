@@ -8,7 +8,7 @@
 ---
 ##在子线程中进行UI操作一共有四种方式：
 ###1.发送Message，并重写Handle中的handleMessage（）方法
-###2.Handle的post（）方法
+###2.Handler的post（）方法
 ###3.View的post（）方法
 ###4.Activity的runOnUiThread（）方法
 ---
