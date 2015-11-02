@@ -44,6 +44,8 @@ public static final Looper myLooper() {
 }
 ```
 发现是在sThreadLocal.get()方法取出Looper，如果没有就返回空，返回空以后Looper.myLooper()方法失败，所以导致Handler的构造方法失败，抛出异常。所以又回到了前面的问题，怎么样让它不为空呢？就是调用Looper.prepare()方法啦，这样你在子线程中创建Handler就不会抛异常啦！
+
+
 （4）我们来看看Looper.prepare()是怎么样设置Looper的
 ```java
 public static final void prepare() {
@@ -174,7 +176,7 @@ public void dispatchMessage(Message msg) {
 
 那么我们还是要来继续分析一下，为什么使用异步消息处理的方式就可以对UI进行操作了呢？这是由于Handler总是依附于创建时所在的线程，比如我们的Handler是在主线程中创建的，而在子线程中又无法直接对UI进行操作，于是我们就通过一系列的发送消息、入队、出队等环节，最后调用到了Handler的handleMessage()方法中，这时的handleMessage()方法已经是在主线程中运行的，因而我们当然可以在这里进行UI操作了。
 
-##2.Handle的post（）方法
+##2.Handler的post（）方法
 
 （1）我们先来看下Handler中的post()方法，代码如下所示：
 ```java
