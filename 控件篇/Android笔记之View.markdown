@@ -10,6 +10,7 @@
 加载布局的任务通常都是在Activity中调用setContentView()方法来完成的。其实setContentView()方法的内部也是使用LayoutInflater来加载布局的。
 
 LayoutInflater实例获取：
+
 第一种：
 ```
 LayoutInflater layoutInflater = LayoutInflater.from(context);  
