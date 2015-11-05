@@ -76,10 +76,15 @@ android:layout_marginLeft="30px"
 
 分别在：
 res/layout/main.xml
+
     可能有一个fragment，小屏幕时加载
+    
 res/layout-large/main.xml
+
     可能有两个fragment，大于7寸时加载
+    
 这两个地方放置两个名称相同的布局文件，注意第二个文件夹需要我们自己来创建，而且名称必须都是相同的，这样在加载不同屏幕大小的同一个布局时才可以找到。
+
 
 **请注意第二个布局的目录名中包含了large限定符，那些被定义为大屏的设备(比如7寸以上的平板)会自动加载此布局，而小屏设备会加载另一个默认的布局。**
 
@@ -90,9 +95,14 @@ Smallest-width限定符允许你设定一个具体的最小值(以dp为单位)�
 
 分别在：
 res/layout/main.xml
+
     可能有一个fragment，小屏幕时加载
+    
 res/layout-sw600dp/main.xml
+
     可能有两个fragment，大于7寸时加载
+    
+    
     
 这意味着，那些最小屏幕宽度大于600dp的设备会选择layout-sw600dp/main.xml(two-pane)布局，而更小屏幕的设备将会选择layout/main.xml(single-pane)布局。
 然而，使用早于Android 3.2系统的设备将无法识别sw600dp这个限定符，所以你还是同时需要使用large限定符。这样你就需要在res/layout-large和res/layout-sw600dp目录下都添加一个相同的main.xml。
