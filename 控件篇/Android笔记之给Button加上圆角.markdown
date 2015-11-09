@@ -3,8 +3,7 @@
 标签（空格分隔）： Android
 
 ---
-
-在布局文件夹资源下，写一个XML文件：
+写一个XML文件：
 ```
 //round_corner_bg.xml
 
@@ -21,7 +20,7 @@
 
 使用Button时在其布局文件中加上一个属性如下：
 layout中给button加上background属性
-android:background="@layout/round_corner_bg"
+android:background="@drawable/round_corner_bg"
 
 
 其他需要加上圆角的控件也可以采取类似的方法。
