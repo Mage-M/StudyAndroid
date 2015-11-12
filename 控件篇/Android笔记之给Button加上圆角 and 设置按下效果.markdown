@@ -13,9 +13,18 @@
     android:shape="rectangle" >
     <!-- 填充的颜色 -->
     <solid android:color="#ff000000" />
+    
     <!-- 设置矩形的四个角为弧形 -->
     <!-- android:radius 弧形的半径 -->
     <corners android:radius="7dip" />
+    
+    <!-- 可以设置自定义粗细和颜色的边框 -->
+    <stroke
+        android:width="3dp"
+        android:color="#ffffff" />
+        
+    <!-- 填充的颜色：这里设置背景透明 -->
+    <solid android:color="@android:color/transparent" />
 </shape>
 ```
 
