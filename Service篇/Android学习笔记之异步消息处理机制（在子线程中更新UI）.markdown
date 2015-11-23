@@ -57,7 +57,7 @@ public static final void prepare() {
 ```
 可以看到，首先判断sThreadLocal中是否已经存在Looper了，如果还没有则创建一个新的Looper设置进去。这样也就完全解释了为什么我们要先调用Looper.prepare()方法，才能创建Handler对象。同时也可以看出每个线程中最多只会有一个Looper对象
 
-（5）这个时候我们会有疑问，主线程中也没有调用Looper.prepare()方法，为什么没有崩溃呢？郭神这个省略了一下，我花时间找了一下，发现在我们主线程程序启动的时候，会执行ActivityThread中的main()方法，这个类是Android源码中的类，是程序启动是调用的。意思就是我们的主线程启动以前，系统会调用这个方法来启动主线程，这个方法优先级还在onStart（）方法之上。
+（5）这个时候我们会有疑问，主线程中也没有调用Looper.prepare()方法，为什么没有崩溃呢？郭神这个省略了一下，我花时间找了一下，发现在我们主线程程序启动的时候，会执行ActivityThread中的main()方法，这个类是Android源码中的类，是程序启动时调用的。意思就是我们的主线程启动以前，系统会调用这个方法来启动主线程，这个方法优先级还在onStart（）方法之上。
 ```java
 public static void main(String[] args) {
     SamplingProfilerIntegration.start();
