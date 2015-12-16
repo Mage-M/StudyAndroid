@@ -16,7 +16,7 @@ private void getMemoryFromPhone() {
 	}
 ```
 
-第5,6行是为了将其byte格式化为多少M或者多少G
+第5,6行是为了将其byte格式化为多少M或者多少G，会自动匹配单位
 
 
 
