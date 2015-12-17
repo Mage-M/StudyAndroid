@@ -6,6 +6,8 @@
 
 GestureDetector对外提供了两个接口和一个外部类：
 接口：OnGestureListener、OnDoubleTapListener
+
+
 内部类：SimpleOnGestureListener
 
 但是大致的使用方法是一样的，区别只是如果你实现上面两个接口则需要自己重写其中所有的抽象方法。
