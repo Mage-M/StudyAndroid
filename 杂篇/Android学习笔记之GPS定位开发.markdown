@@ -128,7 +128,6 @@ public class GPSLocationService extends Service{
 	}
 	
 	
-	
 }
 ```
 
