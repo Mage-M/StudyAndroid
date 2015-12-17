@@ -5,6 +5,8 @@
 ---
 
 GestureDetector对外提供了两个接口和一个外部类：
+
+
 接口：OnGestureListener、OnDoubleTapListener
 
 
@@ -63,6 +65,8 @@ private class gesturelistener implements GestureDetector.OnGestureListener{
 ```
 
 ps：
+
+
 1.onSingleTapUp(MotionEvent e)：
 触发顺序：
     点击一下非常快的（不滑动）Touchup：
