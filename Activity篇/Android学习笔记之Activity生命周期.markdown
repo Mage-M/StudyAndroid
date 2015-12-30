@@ -30,7 +30,7 @@
 ##几种状态详解：
 ###1.Active状态：这时候Activity处于栈顶，且是可见的，有焦点的，能够接收用户输入前景Activity。OPhone Runtime将试图不惜一切代价保持它活着，甚至杀死其他Activity以确保它有它所需的资源。当另一个Activity变成Active时，当前的将变成Paused状态。
 ---
-###2.Paused状态：在某些情况下，你的Activity是可见的，但没有焦点，在这时候，Actvity处于Paused状态。例如，如果有一个透明或非全屏幕上的Activity在你的Actvity上面，你的 Activity将。当处于Paused状态时，该Actvity仍被认为是Active的，但是它不接受用户输入事件。在极端情况下，OPhone Runtime将杀死Paused Activity，以进一步回收资源。当一个Actvity完全被遮住时，它将进入Stopped状态。
+###2.Paused状态：在某些情况下，你的Activity是可见的，但没有焦点，在这时候，Actvity处于Paused状态。例如，如果有一个透明或非全屏幕上的Activity在你的Actvity上面，你的 Activity将处于Paused状态。当处于Paused状态时，该Actvity仍被认为是Active的，但是它不接受用户输入事件。在极端情况下，OPhone Runtime将杀死Paused Activity，以进一步回收资源。当一个Actvity完全被遮住时，它将进入Stopped状态。
 ---
 ###3.Stopped 状态：当Activity是不可见的时，Activity处于Stopped状态。Activity将继续保留在内存中保持当前的所有状态和成员信息，假设系统别的地方需要内存的话，这时它是被回收对象的主要候选。当Activity处于Stopped状态时，一定要保存当前数据和当前的UI状态，否则一旦Activity退出或关闭时，当前的数据和UI状态就丢失了。
 ---
