@@ -45,4 +45,4 @@
                  (1)onRestart();
                  (2)onStart();
                  (3)onResume();
-####2.不管什么状态下在Activity显示出来之前调用的都是onResume()；
+####2.不管什么状态下在Activity显示出来之前调用的都是onResume().
