@@ -90,7 +90,9 @@ ps：
     
     
 3.onScroll(MotionEvent e1, MotionEvent e2,float distanceX, float distanceY)：
- 滑屏：手指触动屏幕后，稍微滑动后立即松开
+
+
+    滑屏：手指触动屏幕后，稍微滑动后立即松开
  
  
     onDown-----》onScroll----》onScroll----》onScroll----》………----->onFling
