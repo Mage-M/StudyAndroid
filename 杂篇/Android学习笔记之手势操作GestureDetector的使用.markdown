@@ -69,14 +69,26 @@ ps：
 
 1.onSingleTapUp(MotionEvent e)：
 触发顺序：
+
+
     点击一下非常快的（不滑动）Touchup：
+    
+    
     onDown->onSingleTapUp->onSingleTapConfirmed 
+    
+    
     点击一下稍微慢点的（不滑动）Touchup：
+    
+    
     onDown->onShowPress->onSingleTapUp->onSingleTapConfirmed
 
 2.onLongPress(MotionEvent e)：
 触发顺序：
+
+
     onDown->onShowPress->onLongPress
+    
+    
 3.onScroll(MotionEvent e1, MotionEvent e2,float distanceX, float distanceY)：
  滑屏：手指触动屏幕后，稍微滑动后立即松开
     onDown-----》onScroll----》onScroll----》onScroll----》………----->onFling
