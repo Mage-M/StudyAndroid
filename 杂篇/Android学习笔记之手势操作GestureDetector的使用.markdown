@@ -91,9 +91,17 @@ ps：
     
 3.onScroll(MotionEvent e1, MotionEvent e2,float distanceX, float distanceY)：
  滑屏：手指触动屏幕后，稍微滑动后立即松开
+ 
+ 
     onDown-----》onScroll----》onScroll----》onScroll----》………----->onFling
+    
+    
     拖动
+    
+    
     onDown------》onScroll----》onScroll------》onFiling
+    
+    
 
     可见，无论是滑屏，还是拖动，影响的只是中间OnScroll触发的数量多少而已，最终都会触发onFling事件！
 
